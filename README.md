@@ -28,19 +28,19 @@ Your program must input a feature model, together with a set of configurations, 
 
 ### Input
 
-The input consists of a number of test cases. Each test case has two parts. The first part represents the feature model and the second part lists the configurations to be validated. The feature model is described as a set of lines of the following forms, each describing a (non-leaf) feature ? that is composed from a set of n > 1 subfeatures:
+The input consists of a number of test cases. Each test case has two parts. The first part represents the feature model and the second part lists the configurations to be validated. The feature model is described as a set of lines of the following forms, each describing a (non-leaf) feature `?` that is composed from a set of $`n > 1`$ subfeatures:
 
-* F = F1 + F2 + ... + Fn, where Fi is either a feature name, or a question mark followed by a feature name.
-* F = F1 | F2 | ... | Fn, where Fi is a feature name
-* F = F1 ^ F2 ^ ... ^ Fn, where Fi is a feature name
+* $`F = F_1 + F_2 + \dots + F_n`$, where $`F_i`$ is either a feature name, or a question mark followed by a feature name.
+* $`F = F_1 | F_2 | ... | F_n`$, where $`F_i`$ is a feature name
+* $`F = F_1 \land F_2 \land \dots \land F_n`$, where $`F_i`$ is a feature name
 
-Each line defines the sub-features of a feature ?. In the first case, optional features are preceded by a question mark (see the sample input). It is assumed that the first line defines the whole coffee machine (that must be present in all valid configurations). The feature names are sequences of upper-case and lower-case letters (with no blanks in between). However, there may be arbitrary number of blank characters in the beginning or at the end of the lines, or around the symbols =, +, ?(Optional), |(Or), and ^(Alternative). You may safely assume that each feature is defined once, and the feature model forms a tree. As said before, each feature appears only once in the feature tree (e.g. we cannot have A=B+C and B=C+D). Also assume that the total number of features is at most 1000 (and of course at least one).
+Each line defines the sub-features of a feature `?`. In the first case, optional features are preceded by a question mark (see the sample input). It is assumed that the first line defines the whole coffee machine (that must be present in all valid configurations). The feature names are sequences of upper-case and lower-case letters (with no blanks in between). However, there may be arbitrary number of blank characters in the beginning or at the end of the lines, or around the symbols `=`, `+`, `?`(Optional), `|`(Or), and `^`(Alternative). You may safely assume that each feature is defined once, and the feature model forms a tree. As said before, each feature appears only once in the feature tree (e.g. we cannot have `A=B+C` and `B=C+D`). Also assume that the total number of features is at most 1000 (and of course at least one).
 
-After the last line of a feature model description there is a line containing a single # character, after which come the lines describing the configurations that you must validate. Each configuration comes in a separate line of the form {F1,F2, ... ,Fn} where Fi is a feature name and n > 0. There may be blank characters anywhere in the line except in the feature names. You may assume that each Fi has appeared in the feature model description and there are no duplicate feature names in a configuration. The last line of the test case is a single line containing ##. After the last test case, there is a line containing ### which should not be processed.
+After the last line of a feature model description there is a line containing a single `#` character, after which come the lines describing the configurations that you must validate. Each configuration comes in a separate line of the form $`\{ F_1, F_2, \dots, F_n \}`$ where $`F_i`$ is a feature name and $`n > 0`$. There may be blank characters anywhere in the line except in the feature names. You may assume that each $`F_i`$ has appeared in the feature model description and there are no duplicate feature names in a configuration. The last line of the test case is a single line containing `##`. After the last test case, there is a line containing `###` which should not be processed.
 
 ### Output
 
-For each configuration in each test case, print one line in the output containing either Valid or Invalid words, indicating whether the corresponding configuration is valid. Print a line containing +++ (three plus sign) after each test case.
+For each configuration in each test case, print one line in the output containing either Valid or Invalid words, indicating whether the corresponding configuration is valid. Print a line containing `##` after each test case.
 
 ### Sample Input
 ```text
@@ -64,10 +64,10 @@ B=D|E
 ```text
 Valid
 Invalid
-+++
+##
 Valid
 Invalid
-+++
+##
 ```
 
 ### Source
