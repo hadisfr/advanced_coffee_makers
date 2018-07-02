@@ -1,0 +1,17 @@
+# use the official gcc image, based on debian
+image: gcc
+
+build:
+  stage: build
+  script: 
+    - make
+  artifacts:
+    expire_in: 1 hr
+    paths:
+      - a.out
+
+test:
+  stage: test
+  script:
+    - ./a.out < test/sample.in > test/sample.out 
+    - diff test/sample.out test/sample.sol
